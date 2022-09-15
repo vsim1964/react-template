@@ -11,7 +11,7 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, 'dist'),
 		clean: true,
-		filename: '[name][contenthash].js',
+		filename: '[name][content-hash].js',
 		assetModuleFilename: 'assets/[hash],[ext],[query]'
 	},
 	resolve: {
@@ -57,11 +57,11 @@ module.exports = {
 			{
 				test: /\.(sa|sc|c)ss$/i,
 				use: [
-					MiniCssExtractPlugin, 'css-loader', {
+					MiniCssExtractPlugin.loader, 'css-loader', {
 						loader: 'postcss-loader',
 						options: {
 							postcssOptions: {
-								plugins: ['poscss-preset-env']
+								plugins: ['postcss-preset-env']
 							}
 						}
 					}, 'sass-loader'
